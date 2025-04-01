@@ -17,4 +17,4 @@ spec:
     spec:
       initContainers:
       - name: init-mysql
-        image: dbastianelli/database:v1.0
+        image: dbastianelli/database:latest
