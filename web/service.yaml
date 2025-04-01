@@ -11,7 +11,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: web
+    app: mysql
   type: NodePort
 status:
   loadBalancer: {}
