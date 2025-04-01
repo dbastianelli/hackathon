@@ -14,12 +14,13 @@ spec:
             name: webservice
             port:
               number: 80
+  - host: www.dandb1.com
     http:
       paths:
       - pathType: Prefix
-        path: "/db"
+        path: "/"
         backend:
           service:
             name: dbservice
             port:
-              number: 80
+              number: 80    
