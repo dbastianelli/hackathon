@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hackathon-applications
+spec:
+  rules:
+  - host: www.danweb1.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webservice
+            port:
+              number: 80
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/db"
+        backend:
+          service:
+            name: dbservice
+            port:
+              number: 80
