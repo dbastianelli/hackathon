@@ -18,3 +18,9 @@ spec:
       initContainers:
       - name: init-mysql
         image: dbastianelli/database:latest
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dbsecret
+                key: password
