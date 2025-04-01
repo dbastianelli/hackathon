@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: dbastianelli/web:v1.0
+        image: dbastianelli/web:v2.0
         ports:
         - containerPort: 80
