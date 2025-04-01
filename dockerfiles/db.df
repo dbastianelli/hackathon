@@ -1,0 +1,8 @@
+FROM mysql
+ENV MYSQL_DATABASE dandb
+
+COPY ./createtables.sql /docker-entrypoint-initdb.d/
+COPY ./insertvalues.sql /docker-entrypoint-initdb.d/
+
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=123
