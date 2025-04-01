@@ -13,10 +13,9 @@ spec:
     metadata:
       labels:
         app: mysql
-        app.kubernetes.io/name: mysql
     spec:
-      initContainers:
-      - name: init-mysql
+      containers:
+      - name: mysql
         image: dbastianelli/database:latest
         env:
           - name: MYSQL_ROOT_PASSWORD
@@ -24,3 +23,11 @@ spec:
               secretKeyRef:
                 name: dbsecret
                 key: MYSQL_ROOT_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: dbname
+                key: MY_SQL_DATABASE
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
