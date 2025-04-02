@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: dbastianelli/database:latest
+        image: dbastianelli/database:v4.0
         env:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
